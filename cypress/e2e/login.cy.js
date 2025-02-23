@@ -5,7 +5,7 @@ import * as default_data from "../helpers/default_data.json";
 
 describe("Проверка авторизации", function () {
   beforeEach("Начало теста", function () {
-    cy.visit("/");
+    cy.visit('/');
     cy.get(main_page.fogot_pass_btn).should(
       "have.css",
       "color",
@@ -46,7 +46,7 @@ describe("Проверка авторизации", function () {
     cy.get(main_page.password).type(default_data.password);
     cy.get(main_page.login_button).click();
     cy.get(result_page.title).should("be.visible");
-    cy.get(result_page.title).contains("Нужно исправить проблему валидации");
+    cy.get(result_page.title).contains("Такого логина или пароля нет");
   });
 
   it("Валидация на наличие @", function () {
